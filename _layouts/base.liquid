@@ -1,0 +1,18 @@
+---
+common-css:
+- "/assets/style.css"
+- "/assets/additional-style.css"
+
+common-js:
+- "/assets/script.js"
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+    {% include head.liquid %}
+    <body>
+        {% include header.liquid %}
+        {{ content }}
+        {% include footer.liquid %}
+    </body>
+</html>

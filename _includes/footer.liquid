@@ -1,0 +1,10 @@
+<footer class="footer">
+    <h4 class="title"><a href="{{site.url}}">{{site.url}}</a></h4>
+    <nav class="navigation navigation--social">
+        <ul role="navigation" aria-label="Social Media">
+            {% for item in site.social %}
+                <li><a href="{{ item.url }}" target="_blank" title="{{ item.name }}" aria-label="{{ item.name }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</footer>

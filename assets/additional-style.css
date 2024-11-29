@@ -1,0 +1,20 @@
+.post p img {
+    max-width: 120%;
+    margin-left: -10%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: auto;
+}
+
+.page-previous {
+    position: absolute;
+    left: -50px;
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+@media (max-width: 960px) {
+    .page-previous {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+<main role="main" class="container">
+    <article class="post">
+        <header class="post__header">
+            <label class="tag">
+                {{ page.categories[0] | capitalize }}.
+            </label>
+            <section class="page-previous">
+                <a href="{% link posts.md %}"><i class="fas fa-chevron-circle-left"></i></a>
+            </section>
+            <h1>{{ page.title | capitalize }}</h1>
+            <ul class="keywords">
+                {% for tag in page.tags  %}
+                    <li>{{ tag | capitalize }}</li>
+                {% endfor %}
+            </ul>
+        </header>
+        <section class="post__content">
+            {{content}}
+        </section>
+    </article>
+</main>

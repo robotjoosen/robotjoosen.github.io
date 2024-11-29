@@ -1,0 +1,11 @@
+<picture class="image">
+    [[!ImageCropper?
+    &image=`[[!pdoFieldJson? &id=`[[+id]]` &field=`resource_image`]]`
+    &tpl=`base.responsive.image`
+    ]]
+</picture>
+<section class="content">
+    <h2 class="title">[[+longtitle:default=`[[+pagetitle]]`]]. <small class="tag">[[TaggerGetTags? &resources=`[[+id]]` &groups=`2` &rowTpl=`tag_tpl`]].</small></h2>
+    <p>[[+introtext]]</p>
+    <p><a href="[[+uri]]" class="button">Lees meer</a></p>
+</section>

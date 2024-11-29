@@ -1,0 +1,21 @@
+<header class="header header--home">
+    <section class="header--navigation">
+        <nav class="navigation navigation--social">
+            <ul role="navigation" aria-label="Social Media">
+                {% for item in site.social %}
+                    <li><a href="{{ item.url }}" target="_blank" title="{{ item.name }}" aria-label="{{ item.name }}"><i class="fab {{ item.icon }}"></i></a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+        <nav class="navigation navigation--hamburger">
+            <input class="menu-toggle" type="checkbox" id="navigationHamburger">
+            <label for="navigationHamburger"><i class="fas fa-bars"></i></label>
+            <ul role="navigation" aria-label="Primary Navigation">
+                {% assign pages = site.pages | where_exp: 'page', 'page.title' %}
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title | capitalize }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </section>
+</header>

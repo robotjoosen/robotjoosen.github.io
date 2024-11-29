@@ -1,0 +1,19 @@
+<section class="overview__item">
+    <a href="[[+uri]]">
+        <picture class="image">
+            [[!ImageCropper?
+            &image=`[[!pdoFieldJson? &id=`[[+id]]` &field=`resource_image`]]`
+            &tpl=`base.responsive.image`
+            ]]
+        </picture>
+        <div class="content">
+            <div class="meta">
+                <time>[[+publishedon:date=`%d %B %Y`]]</time>
+                <small class="tag">[[TaggerGetTags? &resources=`[[+id]]` &groups=`2` &rowTpl=`tag_tpl`]].</small>
+            </div>
+            <h2 class="title">[[+longtitle:default=`[[+pagetitle]]`]]</h2>
+            <p class="description">[[+description]]</p>
+            <i class="fas fa-chevron-circle-left"></i>
+        </div>
+    </a>
+</section>
