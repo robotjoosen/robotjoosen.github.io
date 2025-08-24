@@ -13,6 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 title: Roald Joosen
 description: I just want to see what happens...
 keywords: Robot, DIY, Research, Development, Programming
@@ -35,7 +36,6 @@ social:
 markdown: kramdown
 highlighter: rouge
 permalink: /posts/:year-:month-:day/:title/
-paginate: 5
 plugins:
   - jekyll-feed
   - jekyll-paginate
@@ -46,6 +46,7 @@ plugins:
 # to override the default setting.
 exclude:
   - .idea
+  - .DS_Store
   - CHANGELOG.md
   - CNAME
   - Gemfile
@@ -55,4 +56,3 @@ exclude:
   - screenshot.png
   - Makefile
   - docs/
-
