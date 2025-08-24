@@ -2,6 +2,7 @@
 layout: base
 ---
 
+
 <main role="main" class="container">
     <article class="post">
         <header class="post__header">
@@ -23,3 +24,45 @@ layout: base
         </section>
     </article>
 </main>
+
+{% for post in site.posts %}
+    {% if post.url == page.url %}
+        {% assign pOffset = forloop.index0 | minus: 1 %}
+        {% assign nOffset = pOffset | plus: 2 %}
+        {% if forloop.first == false %}
+            {% assign next_post = site.posts[pOffset] %}
+        {% endif %}
+        {% if forloop.last == false %}
+            {% assign previous_post = site.posts[nOffset] %}
+        {% endif %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+<div class="post__neighbors__container">
+    <section class="post__neighbors">
+        <div class="post__neighbor">
+            {% if next_post %}
+                <a href="{{ next_post.url }}">
+                    <figure class="image">
+                        <picture>
+                            <img src="{{ next_post.image }}" alt="">
+                        </picture>
+                    </figure>
+                    <span class="title">{{ next_post.title }}</span>
+                </a>
+            {% endif %}
+        </div>
+        <div class="post__neighbor">
+            {% if previous_post %}
+            <a href="{{ previous_post.url }}">
+                <figure class="image">
+                    <picture>
+                        <img src="{{ previous_post.image }}" alt="">
+                    </picture>
+                </figure>
+                <span class="title">{{ previous_post.title }}</span>
+            </a>
+            {% endif %}
+        </div>
+    </section>
+</div>
